@@ -54,7 +54,7 @@ class L298 {
     this.enb = new Gpio(enb, {mode: Gpio.OUTPUT})
 
     this.motorA = new Motor({enabled: this.ena, in1: this.in1, in2: this.in2})
-    this.motorB = new Motor({enabled: this.enb, in1: this.in3, in2: this.in4})
+    this.motorB = new Motor({enabled: this.enb, in1: this.in4, in2: this.in3})
   }
 
   forward (speed=255) {
