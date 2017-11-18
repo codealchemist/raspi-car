@@ -16,10 +16,7 @@ function log(message) {
   console.log(`- ${message}`)
 }
 
-boards.on('ready', () => {
-  console.log('BOARD READY!')
-
-  controller
+controller
     .on('forward', () => {
       log('FORWARD')
       bot.forward()
@@ -48,6 +45,3 @@ boards.on('ready', () => {
       log('INFINITY')
       bot.infinity()
     })
-
-  boards.repl.inject({bot})
-})
