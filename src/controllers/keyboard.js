@@ -40,7 +40,7 @@ class KeyboardController {
 
       if (keyName === 'down') {
         this.log('REVERSE')
-        this.events.backwards()
+        this.events.reverse()
         return
       }
 
