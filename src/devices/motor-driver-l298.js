@@ -5,24 +5,33 @@ class Motor {
     this.enabled = enabled
     this.in1 = in1
     this.in2 = in2
+    this.isEnabled = false
   }
 
   forward (speed=255) {
+    if (!this.isEnabled) this.on()
     this.in1.servoWrite(speed)
     this.in2.servoWrite(0)
   }
 
   reverse (speed=255) {
+    if (!this.isEnabled) this.on()
     this.in1.servoWrite(0)
     this.in2.servoWrite(speed)
   }
 
   brake () {
+    if (!this.isEnabled) this.on()
     this.in1.servoWrite(255)
     this.in2.servoWrite(255)
   }
 
+  on () {
+    this.enabled.digitalWrite(1)
+  }
+
   off () {
+    this.enabled.digitalWrite(0)
     this.in1.servoWrite(0)
     this.in2.servoWrite(0)
   }
