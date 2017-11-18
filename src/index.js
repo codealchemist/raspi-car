@@ -34,8 +34,8 @@ controller
       bot.right()
     })
     .on('brake', () => {
-      log('breake')
-      bot.breake()
+      log('brake')
+      bot.brake()
     })
     .on('off', () => {
       log('OFF')

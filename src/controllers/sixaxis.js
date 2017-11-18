@@ -31,8 +31,8 @@ class SixaxisController {
     gamepad.ondigital = (button, value) => {
       console.log(`BUTTON ${button} = ${value}`)
       if (!value) {
-        this.log('STOP')
-        this.events.stop()
+        this.log('OFF')
+        this.events.off()
         return
       }
 
@@ -44,7 +44,7 @@ class SixaxisController {
 
       if (button === 'down') {
         this.log('REVERSE')
-        this.events.backwards()
+        this.events.reverse()
         return
       }
 
