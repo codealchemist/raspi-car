@@ -21,7 +21,7 @@ controller
       log('FORWARD')
       bot.forward()
     })
-    .on('backwards', () => {
+    .on('reverse', () => {
       log('REVERSE')
       bot.reverse()
     })
@@ -33,9 +33,13 @@ controller
       log('RIGHT')
       bot.right()
     })
-    .on('stop', () => {
-      log('STOP')
-      bot.stop()
+    .on('brake', () => {
+      log('breake')
+      bot.breake()
+    })
+    .on('off', () => {
+      log('OFF')
+      bot.off()
     })
     .on('circle', () => {
       log('CIRCLE')
