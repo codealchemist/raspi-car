@@ -6,7 +6,7 @@ class Robot {
     motorDriver.forward(speed)
   }
 
-  revere (speed=255) {
+  reverse (speed=255) {
     if (this.timer) this.clearTimeout(this.timer)
     motorDriver.reverse(speed)
   }
