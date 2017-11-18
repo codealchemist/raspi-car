@@ -1,0 +1,25 @@
+{
+  "name": "raspi-car",
+  "version": "1.0.0",
+  "description": "Toy car controlled by a RaspberryPi.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codealchemist/raspi-car.git"
+  },
+  "keywords": [
+    "raspberrypi",
+    "car",
+    "robotics"
+  ],
+  "author": "Alberto Miranda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codealchemist/raspi-car/issues"
+  },
+  "homepage": "https://github.com/codealchemist/raspi-car#readme"
+}
