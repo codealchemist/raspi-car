@@ -10,20 +10,20 @@ class Motor {
 
   forward (speed=255) {
     if (!this.isEnabled) this.on()
-    this.in1.servoWrite(speed)
-    this.in2.servoWrite(0)
+    this.in1.pwmWrite(speed)
+    this.in2.pwmWrite(0)
   }
 
   reverse (speed=255) {
     if (!this.isEnabled) this.on()
-    this.in1.servoWrite(0)
-    this.in2.servoWrite(speed)
+    this.in1.pwmWrite(0)
+    this.in2.pwmWrite(speed)
   }
 
   brake () {
     if (!this.isEnabled) this.on()
-    this.in1.servoWrite(255)
-    this.in2.servoWrite(255)
+    this.in1.pwmWrite(255)
+    this.in2.pwmWrite(255)
   }
 
   on () {
@@ -32,8 +32,8 @@ class Motor {
 
   off () {
     this.enabled.digitalWrite(0)
-    this.in1.servoWrite(0)
-    this.in2.servoWrite(0)
+    this.in1.pwmWrite(0)
+    this.in2.pwmWrite(0)
   }
 }
 
