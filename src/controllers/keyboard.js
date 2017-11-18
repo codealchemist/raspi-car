@@ -1,7 +1,4 @@
 const keypress = require('keypress')
-keypress(process.stdin)
-process.stdin.setRawMode(true)
-process.stdin.resume()
 
 class KeyboardController {
   constructor () {
@@ -21,6 +18,10 @@ class KeyboardController {
   }
 
   init () {
+    keypress(process.stdin)
+    process.stdin.setRawMode(true)
+    process.stdin.resume()
+
     process.stdin.on('keypress', (ch, key) => {
       // Debounce keypress.
       if (this.readingKey) return
