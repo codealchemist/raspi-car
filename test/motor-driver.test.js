@@ -18,6 +18,8 @@ function test (motor, callback) {
       setTimeout(() => {
         console.log('- off')
         motor.off()
+
+        if (typeof callback === 'function') callback()
       }, wait)
     }, wait)
   }, wait)
