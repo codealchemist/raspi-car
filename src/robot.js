@@ -2,37 +2,37 @@ const motorDriver = require('./devices/motor-driver-l298')
 
 class Robot {
   forward (speed=255) {
-    if (this.timer) this.clearTimeout(this.timer)
+    if (this.timer) clearTimeout(this.timer)
     motorDriver.forward(speed)
   }
 
   reverse (speed=255) {
-    if (this.timer) this.clearTimeout(this.timer)
+    if (this.timer) clearTimeout(this.timer)
     motorDriver.reverse(speed)
   }
 
   left (speed) {
-    if (this.timer) this.clearTimeout(this.timer)
+    if (this.timer) clearTimeout(this.timer)
     motorDriver.left(speed)
   }
 
   right (speed) {
-    if (this.timer) this.clearTimeout(this.timer)
+    if (this.timer) clearTimeout(this.timer)
     motorDriver.right(speed)
   }
 
   brake () {
-    if (this.timer) this.clearTimeout(this.timer)
+    if (this.timer) clearTimeout(this.timer)
     motorDriver.brake()
   }
 
   off () {
-    if (this.timer) this.clearTimeout(this.timer)
+    if (this.timer) clearTimeout(this.timer)
     motorDriver.off()
   }
 
   circle (speed=255, direction=1) {
-    if (this.timer) this.clearTimeout(this.timer)
+    if (this.timer) clearTimeout(this.timer)
     if (direction) {
       motorDriver.right(speed)
     } else {
@@ -41,7 +41,7 @@ class Robot {
   }
 
   infinity (speed=255) {
-    if (this.timer) this.clearTimeout(this.timer)
+    if (this.timer) clearTimeout(this.timer)
 
     const wait = 3000 // ms
     motorDriver.right(speed)
