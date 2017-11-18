@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/codealchemist/raspi-car/issues"
   },
-  "homepage": "https://github.com/codealchemist/raspi-car#readme"
+  "homepage": "https://github.com/codealchemist/raspi-car#readme",
+  "dependencies": {
+    "dualshock": "^2.2.2",
+    "keypress": "^0.2.1",
+    "printii": "^1.0.0"
+  }
 }
