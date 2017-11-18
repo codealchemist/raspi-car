@@ -79,6 +79,12 @@ class KeyboardController {
         this.events.brake()
         return
       }
+
+      if (keyName === 'q') {
+        this.log('QUIT')
+        process.exit()
+        return
+      }
     })
   }
 
