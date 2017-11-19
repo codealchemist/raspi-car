@@ -4,12 +4,13 @@ class SixaxisController {
   constructor () {
     this.events = {
       forward: () => {},
-      backwards: () => {},
+      reverse: () => {},
       left: () => {},
       right: () => {},
-      sleep: () => {},
-      stop: () => {},
-      attack: () => {}
+      off: () => {},
+      brake: () => {},
+      circle: () => {},
+      infinity: () => {}
     }
 
     this.debug = !!process.env.DEBUG
