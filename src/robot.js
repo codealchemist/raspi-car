@@ -21,6 +21,26 @@ class Robot {
     motorDriver.right(speed)
   }
 
+  forwardRight (speed) {
+    if (this.timer) clearTimeout(this.timer)
+    motorDriver.forwardRight(speed)
+  }
+
+  forwardLeft (speed) {
+    if (this.timer) clearTimeout(this.timer)
+    motorDriver.forwardLeft(speed)
+  }
+
+  reverseRight (speed) {
+    if (this.timer) clearTimeout(this.timer)
+    motorDriver.reverseRight(speed)
+  }
+
+  reverseLeft (speed) {
+    if (this.timer) clearTimeout(this.timer)
+    motorDriver.reverseLeft(speed)
+  }
+
   brake () {
     if (this.timer) clearTimeout(this.timer)
     motorDriver.brake()

@@ -33,6 +33,22 @@ controller
       log('RIGHT')
       bot.right()
     })
+    .on('forwardRight', () => {
+      log('FORWARD RIGHT')
+      bot.forwardRight()
+    })
+    .on('forwardLeft', () => {
+      log('FORWARD LEFT')
+      bot.forwardLeft()
+    })
+    .on('reverseLeft', () => {
+      log('REVERSE LEFT')
+      bot.reverseLeft()
+    })
+    .on('reverseRight', () => {
+      log('REVERSE RIGHT')
+      bot.reverseRight()
+    })
     .on('brake', () => {
       log('brake')
       bot.brake()

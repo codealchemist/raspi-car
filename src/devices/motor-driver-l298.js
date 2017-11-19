@@ -86,6 +86,26 @@ class L298 {
     this.motorA.off()
     this.motorB.forward(speed)
   }
+
+  forwardRight (speed) {
+    this.motorA.forward(speed/2)
+    this.motorB.forward(speed)
+  }
+
+  forwardLeft (speed) {
+    this.motorA.forward(speed)
+    this.motorB.forward(speed/2)
+  }
+
+  reverseRight (speed) {
+    this.motorA.reverse(speed/2)
+    this.motorB.reverse(speed)
+  }
+
+  reverseLeft (speed) {
+    this.motorA.reverse(speed)
+    this.motorB.reverse(speed/2)
+  }
 }
 
 const motorDriver = new L298({ena: 2, in1: 3, in2: 18, in3: 15, in4: 4, enb: 14})
