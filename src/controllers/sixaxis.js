@@ -151,7 +151,7 @@ class SixaxisController {
 
     gamepad.ondigital = (button, value) => {
       console.log(`BUTTON ${button} = ${value}`)
-      if (!value && !this.isAnimating) {
+      if (!value) {
         if (this.isSingleMovement()) {
           this.off()
           return
@@ -164,6 +164,9 @@ class SixaxisController {
           // Apply active movement.
           button = this.state.movement[0]
         }
+
+        // Ignore button release for animations.
+        if (this.isAnimating) return
       }
 
       if (button === 'up') {
