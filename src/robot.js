@@ -78,6 +78,7 @@ class Robot {
   zigzag (speed=255, count=6, callback) {
     if (this.timer) clearTimeout(this.timer)
     if (!count) {
+      this.off()
       if (typeof callback === 'function') callback()
       return
     }
