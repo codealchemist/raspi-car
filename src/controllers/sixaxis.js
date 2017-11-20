@@ -108,24 +108,10 @@ class SixaxisController {
     this.state.movement = ['down', 'left']
   }
 
-  circle () {
-    this.log('CIRCLE')
+  animate (event) {
+    this.log(`ANIMATION: ${event}`)
     this.isAnimating = true
-    this.events.circle()
-    this.state.movement = []
-  }
-
-  infinity () {
-    this.log('INFINITY')
-    this.isAnimating = true
-    this.events.circle()
-    this.state.movement = []
-  }
-
-  dance () {
-    this.log('DANCE')
-    this.isAnimating = true
-    this.events.dance()
+    this.events[event]()
     this.state.movement = []
   }
 
@@ -240,17 +226,22 @@ class SixaxisController {
       }
 
       if (button === 'circle') {
-        this.circle()
+        this.animate('circle')
         return
       }
 
       if (button === 'cross') {
-        this.infinity()
+        this.animate('infinity')
         return
       }
 
       if (button === 'r1') {
-        this.dance()
+        this.animate('dance')
+        return
+      }
+
+      if (button === 'r2') {
+        this.animate('zigzag')
         return
       }
     }

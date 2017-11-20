@@ -69,3 +69,7 @@ controller
       log('DANCE')
       bot.dance()
     })
+    .on('zigzag', () => {
+      log('ZIGZAG')
+      bot.zigzag()
+    })

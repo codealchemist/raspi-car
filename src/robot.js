@@ -75,13 +75,17 @@ class Robot {
     }, wait)
   }
 
-  zigzag (speed=255, count=6, callback) {
+  zigzag (speed=255, count=-1, callback) {
     if (this.timer) clearTimeout(this.timer)
     if (!count) {
       this.off()
       if (typeof callback === 'function') callback()
       return
     }
+
+    // Setting count to -1 loops forever.
+    // Avoid count to grow too large when looping forever.
+    if (count < 0) count = -1
 
     const wait = 250 // ms
     motorDriver.right(speed)
