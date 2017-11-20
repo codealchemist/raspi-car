@@ -78,7 +78,7 @@ class Robot {
   dance (speed=255) {
     if (this.timer) clearTimeout(this.timer)
 
-    const wait = 1000 // ms
+    const wait = 250 // ms
     motorDriver.right(speed)
 
     this.timer = setTimeout(() => {
