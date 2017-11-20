@@ -81,6 +81,12 @@ class KeyboardController {
         return
       }
 
+      if (keyName === 'd') {
+        this.log('DANCE')
+        this.events.dance()
+        return
+      }
+
       if (keyName === 'q') {
         this.log('QUIT')
         process.exit()

@@ -65,3 +65,7 @@ controller
       log('INFINITY')
       bot.infinity()
     })
+    .on('dance', () => {
+      log('DANCE')
+      bot.dance()
+    })

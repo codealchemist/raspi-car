@@ -74,6 +74,25 @@ class Robot {
       }, wait)
     }, wait)
   }
+
+  dance (speed=255) {
+    if (this.timer) clearTimeout(this.timer)
+
+    const wait = 1000 // ms
+    motorDriver.right(speed)
+
+    this.timer = setTimeout(() => {
+      motorDriver.left(speed)
+
+      this.timer = setTimeout(() => {
+        this.reverse(speed)
+
+        this.timer = setTimeout(() => {
+          this.dance(speed)
+        }, wait * 3)
+      }, wait)
+    }, wait)
+  }
 }
 
 module.exports = new Robot()

@@ -115,6 +115,20 @@ class SixaxisController {
     this.state.movement = []
   }
 
+  infinity () {
+    this.log('INFINITY')
+    this.isAnimating = true
+    this.events.circle()
+    this.state.movement = []
+  }
+
+  dance () {
+    this.log('DANCE')
+    this.isAnimating = true
+    this.events.dance()
+    this.state.movement = []
+  }
+
   isSingleMovement () {
     return (this.state.movement.length === 1)
   }
@@ -228,8 +242,12 @@ class SixaxisController {
       }
 
       if (button === 'cross') {
-        this.log('INFINITY')
-        this.events.infinity()
+        this.infinity()
+        return
+      }
+
+      if (button === 'r1') {
+        this.dance()
         return
       }
     }
