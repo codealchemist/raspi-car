@@ -90,7 +90,7 @@ class Robot {
       motorDriver.left(speed)
 
       this.timer = setTimeout(() => {
-        this.zigzag(speed, count - 1)
+        this.zigzag(speed, count - 1, callback)
       }, wait)
     }, wait)
   }
