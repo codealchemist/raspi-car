@@ -75,8 +75,12 @@ class Robot {
     }, wait)
   }
 
-  dance (speed=255) {
+  zigzag (speed=255, count=6, callback) {
     if (this.timer) clearTimeout(this.timer)
+    if (!count) {
+      if (typeof callback === 'function') callback()
+      return
+    }
 
     const wait = 250 // ms
     motorDriver.right(speed)
@@ -88,10 +92,22 @@ class Robot {
         this.reverse(speed)
 
         this.timer = setTimeout(() => {
-          this.dance(speed)
-        }, wait * 3)
+          this.zigzag(speed, count - 1)
+        }, wait)
       }, wait)
     }, wait)
+  }
+
+  dance (speed=255) {
+    if (this.timer) clearTimeout(this.timer)
+
+    const wait = 1000 // ms
+    this.zigzag(speed, 6, () => {
+      this.reverse(speed)
+      this.timer = setTimeout(() => {
+        this.dance(speed)
+      }, wait)
+    })
   }
 }
 
