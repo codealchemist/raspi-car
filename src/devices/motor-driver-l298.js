@@ -77,37 +77,37 @@ class L298 {
     this.motorB.off()
   }
 
-  left (speed) {
+  left (speed=255) {
     this.motorA.forward(speed)
     this.motorB.off()
   }
 
-  right (speed) {
+  right (speed=255) {
     this.motorA.off()
     this.motorB.forward(speed)
   }
 
-  forwardRight (speed) {
+  forwardRight (speed=255) {
     this.motorA.forward(this.getHalfSpeed(speed))
     this.motorB.forward(speed)
   }
 
-  forwardLeft (speed) {
+  forwardLeft (speed=255) {
     this.motorA.forward(speed)
     this.motorB.forward(this.getHalfSpeed(speed))
   }
 
-  reverseRight (speed) {
+  reverseRight (speed=255) {
     this.motorA.reverse(this.getHalfSpeed(speed))
     this.motorB.reverse(speed)
   }
 
-  reverseLeft (speed) {
+  reverseLeft (speed=255) {
     this.motorA.reverse(speed)
     this.motorB.reverse(this.getHalfSpeed(speed))
   }
 
-  getHalfSpeed (speed) {
+  getHalfSpeed (speed=255) {
     return Math.floor(speed/2)
   }
 }
