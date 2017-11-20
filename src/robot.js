@@ -98,8 +98,8 @@ class Robot {
   dance (speed=255) {
     if (this.timer) clearTimeout(this.timer)
 
-    const wait = 750 // ms
-    this.zigzag(speed, 6, () => {
+    const wait = 1250 // ms
+    this.zigzag(speed, 7, () => {
       this.reverse(speed)
       this.timer = setTimeout(() => {
         this.dance(speed)
